@@ -10,12 +10,15 @@ Xenopath is a tool annotating  the xenobiotic degradation potential of microrgan
 
 
 
+# Download and Create the reference databases
 
-# Download and Create the reference database
+Xenopath tool rely on Swissprot database and annotation data for reads-Open Reading Frames annotation, and integrate Kaiju software for taxonomic annotation. 
 
-Xenopath tool rely on Swissprot database and annotation data. The following script will directly downlod the newest version of swissprot and create the database index. 
+### 1. DB for ORFs annotation
 
-xenopath_makedb.py -h
+The following script will directly downlod the newest version of swissprot and create the database index.
+
+python xenopath_makedb.py -h
 usage: xenopath_makedb.py [-h] --database DATABASE --output OUTPUT
                           [--threads THREADS]
 
@@ -23,3 +26,16 @@ usage: xenopath_makedb.py [-h] --database DATABASE --output OUTPUT
 example usage: 
 python xenopath_makedb.py --database swissprot --output ./swissprot_db --threads 5
 
+### 2. DB for taxonomic annnotation (Kaiju: https://github.com/bioinformatics-centre/kaiju)
+
+
+Can donwload the taxonomic database that best suits your data. 
+
+kaiju-makedb -s <DB> # see the link above for information
+    
+example: 
+    kaiju-makedb -s refseq 
+    
+
+
+### 
