@@ -1,7 +1,7 @@
 # XenoPath<sub>xs</sub> v. 0.1
 
-Xenopath<sub>xs</sub> is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads paired-end, single-end as well as the paired and unpaired output from [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic).
-The tool accepts cleaned reads, we provide a tutorial for the reads pre-processing steps (here).
+Xenopath<sub>xs</sub> is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads paired-end, single-end as well as the paired and unpaired output from [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic); generating a unique table for the entire dataset processed.\
+The tool accepts cleaned and compressed reads, we provide a tutorial for the reads pre-processing steps (here).
 
 XenoPath<sub>xs</sub> relies on other tools:
  - [Kaiju](https://github.com/bioinformatics-centre/kaiju)
@@ -15,10 +15,10 @@ XenoPath<sub>xs</sub> relies on other tools:
 
 ### Installation 
 software requirements listed in: xenopath_env.yml\
-Ideally you can create a new environment in conda with all the requirements:\
+Ideally you can create a new environment in conda with all the requirements:
 
 conda env create -f xenopath_env.yml\
-conda activate xenopath_env\
+conda activate xenopath_env
 
 ### Download and Create the reference databases
 
@@ -28,9 +28,9 @@ Donwloading the taxonomic database that best suits your data.\
 example:\
     kaiju-makedb -s refseq 
     
-Download data from this repository:\
-- swissprot_06-29_xeno.dmnd\
-- swissprot_xenobiotic_degra_2020-06-29.csv\
+Download data from this repository:
+- swissprot_06-29_xeno.dmnd
+- swissprot_xenobiotic_degra_2020-06-29.csv
 - map2ec # for Minpath
 
 # 2. Configuration file and sample file
@@ -38,7 +38,6 @@ XenoPath<sub>xs</sub> requires a configuration file (example:config.cfg) and a m
 The configuration file accept the following parameters: 
 
 \[kaiju_setting]\
-kaijuscript = /home/teresa/prova\
 node = /home/user/Kaiju_data/kaijudb/nodes.dmp\
 names = /home/user/Kaiju_data/kaijudb/names.dmp\
 fmi =  /home/user/Kaiju_data/kaijudb/kaiju_db.fmi\
@@ -60,24 +59,24 @@ typereads = 'paired'
 
 \[minpath_setting]\
 minpathec = /home/user/Minpath_tool/MinPath/data/map2ec\
-minpathpy = /home/user/Progetti/Minpath_tool/MinPath
+minpathpy = /home/user/Minpath_tool/MinPath
 
-The metadata file accepts the following column names: 'samples','file','typereads','groups'.
+The metadata file accepts the following column names: 'samples','file','typereads','pair','groups'.
     
 example :\
 samples,file,typereads,pair,groups\
 S010,/home/user/pipeline/metacent_mock/S010_R1.fastq,single,r1,O\
 Y2,/home/user/pipeline/metacent_mock/Y2_R1.fastq,single,r1,Y
 
-Sample: the sample name
-File: the path to the file
-Typereads: paired, unpaired, trimmomatic (paired and unpaired reads)
-Groups: control/case/non-specified
-Example: 
-'samples','file','typereads','groups'
-S1  file/location/ single 
+Sample: the sample name\
+File: the path to the file\
+Typereads: paired, unpaired, trimmomatic (paired and unpaired reads)\
+Groups: control/case/non-specified\
+Example: \
+'samples','file','typereads','pair','groups'\
+S1,file/location/,single,r1,g1
 
-# 3. Running XenoPath 
+# 3. Running XenoPath<sub>xs</sub> 
     
 ### command line:
     python xeno_path.py --config_file config.cfg --metadata metadata.txt
@@ -110,7 +109,7 @@ The output folder contains intermediate data and the following tables summarizin
    
 
     
-### visualization 
+# 4. Visualization 
     
     --to be completed
     
