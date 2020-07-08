@@ -1,11 +1,11 @@
-# XenoPath_xs tool v. 0.1
+# XenoPath<sub>xs<\sub> tool v. 0.1
 
-Xenopath_xs is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads paired-end, single-end and the paired and unpaired output from [link to trimmomatic!] (http://www.usadellab.org/cms/?page=trimmomatic).
+Xenopath_xs is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads paired-end, single-end and the paired and unpaired output from [trimmomatic!](http://www.usadellab.org/cms/?page=trimmomatic).
 The tool accept cleaned reads, we provide a tutorial for the reads pre-processing steps (here).
 
 XenoPath_xs relies on other tools:
- - [Kaiju!] (https://github.com/bioinformatics-centre/kaiju)
- - [Diamond!] (https://github.com/bbuchfink/diamond)
+ - [Kaiju!](https://github.com/bioinformatics-centre/kaiju)
+ - [Diamond!](https://github.com/bbuchfink/diamond)
 
 
 
@@ -23,7 +23,7 @@ conda activate xenopath_env
 
 ### Download and Create the reference databases
 
-#### DB for taxonomic annnotation ([link to Kaiju!]: 'https://github.com/bioinformatics-centre/kaiju')
+#### DB for taxonomic annnotation [Kaiju!](https://github.com/bioinformatics-centre/kaiju)
 
 Donwloading the taxonomic database that best suits your data. 
 example: 
