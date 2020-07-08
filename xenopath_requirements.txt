@@ -1,0 +1,17 @@
+name: xpath
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.6.10
+  - kaiju=1.7.3
+  - bmtagger=3.101
+  - biopython=1.73
+  - numpy=1.18
+  - pandas=1.0.1
+  - trimmomatic=0.39 
+  - matplotlib=3.2.2
+  - bmtagger=3.101
+  - bedtools=2.28.0
+  - bbmap=38.22
+  - samtools=1.10

@@ -1,0 +1,9 @@
+samples,file,typereads,pair,groups
+S010,/home/pipeline/metacent_mock/S010_R1.fastq,paired,r1,O
+S010,/home/pipeline/metacent_mock/S010_R2.fastq,paired,r2,O
+S010,/home/pipeline/metacent_mock/S010_R1_unp.fastq,unpaired,r1,O
+S010,/home/pipeline/metacent_mock/S010_R2_unp.fastq,unpaired,r2,O
+Y2,/home/pipeline/metacent_mock/Y2_R1.fastq,paired,r1,Y
+Y2,/home/pipeline/metacent_mock/Y2_R2.fastq,paired,r2,Y
+Y2,/home/pipeline/metacent_mock/Y2_R1_unp.fastq,unpaired,r1,Y
+Y2,/home/pipeline/metacent_mock/Y2_R2_unp.fastq,unpaired,r2,Y
