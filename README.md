@@ -1,7 +1,7 @@
 # XenoPath<sub>xs</sub> v. 0.1
 
-Xenopath<sub>xs</sub> is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads paired-end, single-end as well as the paired and unpaired output from [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic); generating a unique table for the entire dataset processed.\
-The tool accepts cleaned and compressed reads, we provide a tutorial for the reads pre-processing steps (here).
+Xenopath<sub>xs</sub> is a tool annotating the xenobiotic degradation potential of microorganism from metagenomic and metatranscriptomic data, accepting short-reads of the type paired-end, single-end as well as the paired and unpaired output from [trimmomatic](http://www.usadellab.org/cms/?page=trimmomatic). It can process multiple samples, generating a unique table for the entire dataset.\
+The tool accepts cleaned and compressed data. We provide a tutorial for the reads pre-processing steps (here..).
 
 XenoPath<sub>xs</sub> relies on other tools:
  - [Kaiju](https://github.com/bioinformatics-centre/kaiju)
@@ -14,7 +14,7 @@ XenoPath<sub>xs</sub> relies on other tools:
 # 1. Getting started: 
 
 ### Installation 
-software requirements listed in: xenopath_env.yml\
+Software requirements listed in: xenopath_env.yml\
 Ideally you can create a new environment in conda with all the requirements:
 
 conda env create -f xenopath_env.yml\
@@ -28,53 +28,56 @@ Donwloading the taxonomic database that best suits your data.\
 example:\
     kaiju-makedb -s refseq 
     
-Download data from this repository:
+#### Download data from this repository (monthly updated):
 - swissprot_06-29_xeno.dmnd
 - swissprot_xenobiotic_degra_2020-06-29.csv
 - map2ec # for Minpath
 
+#### Download Minpath
+- [Minpath](https://omics.informatics.indiana.edu/MinPath/)
+
 # 2. Configuration file and sample file
-XenoPath<sub>xs</sub> requires a configuration file (example:config.cfg) and a metadata file with the sample information (example: metadata.cfg ): 
+XenoPath<sub>xs</sub> requires a configuration file (example:config.cfg) and a metadata file with the sample information (example: metadata.cfg): 
 The configuration file accept the following parameters: 
 
-\[kaiju_setting]\
-node = /home/user/Kaiju_data/kaijudb/nodes.dmp\
-names = /home/user/Kaiju_data/kaijudb/names.dmp\
-fmi =  /home/user/Kaiju_data/kaijudb/kaiju_db.fmi\
-a = None\
-s = None\
-E = None\
-p = None
+    \[kaiju_setting]\
+    node = /home/user/Kaiju_data/kaijudb/nodes.dmp\
+    names = /home/user/Kaiju_data/kaijudb/names.dmp\
+    fmi =  /home/user/Kaiju_data/kaijudb/kaiju_db.fmi\
+    a = None\
+    s = None\
+    E = None\
+    p = None
 
-\[diamond_setting]\
-db_diamond = /home/user/pipeline/swissprot_06-29_xeno.dmnd\
-mode = sensitive
+    \[diamond_setting]\
+    db_diamond = /home/user/pipeline/swissprot_06-29_xeno.dmnd\
+    mode = sensitive
 
-\[general_setting]\
-threads = 5\
-folderout = /home/user/pipeline/xenopath_20200703-170138\
-XenoPathfolder = /home/user/pipeline\
-annotab = /home/user/data/swissprot_xenobiotic_degra_2020-06-29.csv\
-typereads = 'paired'
+    \[general_setting]\
+    threads = 5\
+    folderout = /home/user/pipeline/output_folder\
+    XenoPathfolder = /home/user/pipeline\
+    annotab = /home/user/data/swissprot_xenobiotic_degra_2020-06-29.csv\
+    typereads = 'paired'
 
-\[minpath_setting]\
-minpathec = /home/user/Minpath_tool/MinPath/data/map2ec\
-minpathpy = /home/user/Minpath_tool/MinPath
+    \[minpath_setting]\
+    minpathec = /home/user/Minpath_tool/MinPath/data/map2ec\
+    minpathpy = /home/user/Minpath_tool/MinPath
 
-The metadata file accepts the following column names: 'samples','file','typereads','pair','groups'.
-    
-example :\
-samples,file,typereads,pair,groups\
-S010,/home/user/pipeline/metacent_mock/S010_R1.fastq,single,r1,O\
-Y2,/home/user/pipeline/metacent_mock/Y2_R1.fastq,single,r1,Y
+    The metadata file accepts the following column names: 'samples','file','typereads','pair','groups'.
 
-Sample: the sample name\
-File: the path to the file\
-Typereads: paired, unpaired, trimmomatic (paired and unpaired reads)\
-Groups: control/case/non-specified\
-Example: \
-'samples','file','typereads','pair','groups'\
-S1,file/location/,single,r1,g1
+    example :\
+    samples,file,typereads,pair,groups\
+    S010,/home/user/pipeline/metacent_mock/S010_R1.fastq,single,r1,O\
+    Y2,/home/user/pipeline/metacent_mock/Y2_R1.fastq,single,r1,Y
+
+    Sample: the sample name\
+    File: the path to the file\
+    Typereads: paired, unpaired, trimmomatic (paired and unpaired reads)\
+    Groups: control/case/non-specified\
+    Example: \
+    'samples','file','typereads','pair','groups'\
+    S1,file/location/,single,r1,g1
 
 # 3. Running XenoPath<sub>xs</sub> 
     
