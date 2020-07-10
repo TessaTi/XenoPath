@@ -68,8 +68,8 @@ The metadata file accepts the following column names: 'samples','file','typeread
 
     example :
     samples,file,typereads,pair,groups
-    S010,/home/user/pipeline/metacent_mock/S010_R1.fastq,single,r1,O
-    Y2,/home/user/pipeline/metacent_mock/Y2_R1.fastq,single,r1,Y
+    S010,/home/user/S010_R1.fastq.gz,single,r1,O
+    Y2,/home/user/Y2_R1.fastq.gz,single,r1,Y
 
     samples: the sample name
     file: the path to the file
