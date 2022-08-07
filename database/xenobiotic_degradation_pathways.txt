@@ -1,0 +1,22 @@
+1.11	Xenobiotics biodegradation and metabolism
+00362	Benzoate degradation
+00627	Aminobenzoate degradation
+00364	Fluorobenzoate degradation
+00625	Chloroalkane and chloroalkene degradation
+00361	Chlorocyclohexane and chlorobenzene degradation
+00623	Toluene degradation
+00622	Xylene degradation
+00633	Nitrotoluene degradation
+00642	Ethylbenzene degradation
+00643	Styrene degradation
+00791	Atrazine degradation
+00930	Caprolactam degradation
+00363	Bisphenol degradation
+00621	Dioxin degradation
+00626	Naphthalene degradation
+00624	Polycyclic aromatic hydrocarbon degradation
+00365	Furfural degradation
+00984	Steroid degradation
+00980	Metabolism of xenobiotics by cytochrome P450
+00982	Drug metabolism - cytochrome P450
+00983	Drug metabolism - other enzymes
